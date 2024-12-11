@@ -1,0 +1,23 @@
+.container{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+}
+.childa{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+
+}
+.childb{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+a{
+    display: block;
+}
