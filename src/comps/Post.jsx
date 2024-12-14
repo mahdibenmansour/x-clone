@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { TbMessageCircle } from "react-icons/tb";
 import { IoIosMore,IoIosStats } from "react-icons/io";
 import { RiShare2Line } from "react-icons/ri";
@@ -7,6 +8,9 @@ import { FaRegHeart } from "react-icons/fa";
 import Icon from "./icon";
 import PostContent from "./postcontent.jsx"
 export default function Post({children,username,fullname,profilepic,time,likes,retweets,comments,views,verified}){
+  const [isLiked,setIsliked] = useState(false);
+  const [isReposted,setIsReposted] = useState(false);
+  const [isSaved,setIsSaved] = useState(false);
     return (
         <div id="post" className="flex pt-3 border-t border-gray-500 pr-3">
               <div className="w-[10%]  ">
@@ -44,18 +48,18 @@ export default function Post({children,username,fullname,profilepic,time,likes,r
                 <Icon number={comments} color="#f2c6cd">
                     <TbMessageCircle />
                   </Icon>
-                  <Icon number={retweets} color="black">
-                  <FaRetweet />
+                  <Icon  number={isReposted?retweets+1:retweets} color="black">
+                  <FaRetweet  onClick={e=>setIsReposted((prev) => !prev)} color={isReposted?"green":""} />
                   </Icon>
-                  <Icon number={likes} color="black">
-                  <FaRegHeart />
+                  <Icon number={isLiked?likes+1:likes} color="black">
+                  <FaRegHeart onClick={e=>setIsliked((prev) => !prev)} color={isLiked?"red":""}/>
                   </Icon>
                   <Icon number={views} color="#3CDBD3">
-                  <IoIosStats />
+                  <IoIosStats  />
                   </Icon>
                   <div className="flex">
                     <Icon color="#000000">
-                    <FaRegBookmark />
+                    <FaRegBookmark onClick={e=>setIsSaved((prev) => !prev)} color={isSaved?"blue":""}/>
                     </Icon>
                     <Icon color="#f8bb32">
                       <RiShare2Line />

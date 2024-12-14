@@ -10,7 +10,7 @@ export default function Feed(){
             username="@Dearme2_"
             time="23h"
             profilepic="https://pbs.twimg.com/profile_images/1863136130268360705/3dkACUpC_400x400.jpg"
-            likes="300"
+            likes={500}
             retweets="50"
             views="1k"
             comments="30"
@@ -23,7 +23,7 @@ export default function Feed(){
             username="@Dearme69"
             time="23h"
             profilepic="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFdOlgFXvlHaVni4jFIK1QKteSBJfKzX0s_Q&s"
-            likes="300"
+            likes={300}
             retweets="50"
             views="1k"
             comments="30"
@@ -36,7 +36,7 @@ export default function Feed(){
             username="@Dearme2_"
             time="23h"
             profilepic="https://pbs.twimg.com/profile_images/1863136130268360705/3dkACUpC_400x400.jpg"
-            likes="300"
+            likes={400}
             retweets="50"
             views="1k"
             comments="30"
