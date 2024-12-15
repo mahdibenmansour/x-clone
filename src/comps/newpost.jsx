@@ -5,7 +5,7 @@ import { MdOutlineGifBox } from "react-icons/md";
 import { CiImageOn } from "react-icons/ci";
 import { useRef, useState } from "react";
 
-export default function NewPost({ setPosts }) {
+export default function NewPost({ setPosts, setPage }) {
   const [newPost, setNewPost] = useState({});
   const fileRef = useRef();
 
@@ -17,9 +17,10 @@ export default function NewPost({ setPosts }) {
         <img
           src="https://www.strasys.uk/wp-content/uploads/2022/02/Depositphotos_484354208_S.jpg"
           alt="pp"
-          className="rounded-full ml-2"
+          className="rounded-full ml-2 cursor-pointer"
           width="40px"
           height="40px"
+          onClick={() => setPage("Profile")}
         />
       </div>
       <div id="rest" className=" w-[90%] ">

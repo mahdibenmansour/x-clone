@@ -1,9 +1,9 @@
 import Post from "./Post.jsx";
 import NewPost from "./newpost.jsx";
-export default function Feed({ posts, setPosts }) {
+export default function Feed({ setPage, posts, setPosts }) {
   return (
     <div id="feed" className="flex flex-col  ">
-      <NewPost setPosts={setPosts} />
+      <NewPost setPage={setPage} setPosts={setPosts} />
       {posts.map((post) => (
         <Post key={post.id} data={post}>
           {post.description && <p>{post.description}</p>}
