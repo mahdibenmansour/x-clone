@@ -4,6 +4,7 @@ import { MdVerified } from "react-icons/md";
 import LeftBar from "../comps/leftbar.jsx";
 import RightBar from "../comps/rightbar";
 import { useState } from "react";
+import Section from "../comps/profileComps/section.jsx";
 export default function Profile({ setPage }) {
   const [section, setSection] = useState("Media");
   return (
@@ -79,60 +80,24 @@ export default function Profile({ setPage }) {
               </div>
             </div>
             <div className="flex mt-4 w-[100%] border-b border-gray-600 ">
-              <div
-                onClick={() => setSection("Posts")}
-                className=" hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
-              >
-                <p className=" text-gray-400">Posts</p>
-                {section === "Posts" && (
-                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
-                )}
-              </div>
-              <div
-                onClick={() => setSection("Replies")}
-                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
-              >
-                <p className="text-gray-400">Replies</p>
-                {section === "Replies" && (
-                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
-                )}
-              </div>
-              <div
-                onClick={() => setSection("Highlights")}
-                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
-              >
-                <p className="text-gray-400">Highlights</p>
-                {section === "Highlights" && (
-                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
-                )}
-              </div>
-              <div
-                onClick={() => setSection("Articles")}
-                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
-              >
-                <p className="text-gray-400">Articles</p>
-                {section === "Articles" && (
-                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
-                )}
-              </div>
-              <div
-                onClick={() => setSection("Media")}
-                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
-              >
-                <p className="text-gray-400">Media</p>
-                {section === "Media" && (
-                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
-                )}
-              </div>
-              <div
-                onClick={() => setSection("Likes")}
-                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
-              >
-                <p className="text-gray-400">Likes</p>
-                {section === "Likes" && (
-                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
-                )}
-              </div>
+              <Section name="Posts" setSection={setSection} section={section} />
+              <Section
+                name="Replies"
+                setSection={setSection}
+                section={section}
+              />
+              <Section
+                name="Highlights"
+                setSection={setSection}
+                section={section}
+              />
+              <Section
+                name="Articles"
+                setSection={setSection}
+                section={section}
+              />
+              <Section name="Media" setSection={setSection} section={section} />
+              <Section name="Likes" setSection={setSection} section={section} />
             </div>
           </div>
           {/*  */}
