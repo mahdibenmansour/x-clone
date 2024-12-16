@@ -3,7 +3,9 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { MdVerified } from "react-icons/md";
 import LeftBar from "../comps/leftbar.jsx";
 import RightBar from "../comps/rightbar";
+import { useState } from "react";
 export default function Profile({ setPage }) {
+  const [section, setSection] = useState("Media");
   return (
     <div className=" text-white flex content-center ">
       <LeftBar setPage={setPage} />
@@ -76,37 +78,60 @@ export default function Profile({ setPage }) {
                 </p>
               </div>
             </div>
-            <div className="flex mt-4 w-[100%] pb-2 border-b border-gray-600 ">
-              <div className="  flex flex-col flex-1 text-center content-center items-center">
-                <p className="hover:bg-[#2c2b2b65] cursor-pointer text-gray-400">
-                  Posts
-                </p>
-                <div className=" h-1 w-[15%] mt-1 rounded-3xl bg-[#1d9bf0]"></div>
+            <div className="flex mt-4 w-[100%] border-b border-gray-600 ">
+              <div
+                onClick={() => setSection("Posts")}
+                className=" hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
+              >
+                <p className=" text-gray-400">Posts</p>
+                {section === "Posts" && (
+                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
+                )}
               </div>
-              <div className="flex-1 text-center">
-                <p className="hover:bg-[#2c2b2b65] cursor-pointer text-gray-400">
-                  Replies
-                </p>
+              <div
+                onClick={() => setSection("Replies")}
+                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
+              >
+                <p className="text-gray-400">Replies</p>
+                {section === "Replies" && (
+                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
+                )}
               </div>
-              <div className="flex-1 text-center">
-                <p className="hover:bg-[#2c2b2b65] cursor-pointer text-gray-400">
-                  Highlights
-                </p>
+              <div
+                onClick={() => setSection("Highlights")}
+                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
+              >
+                <p className="text-gray-400">Highlights</p>
+                {section === "Highlights" && (
+                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
+                )}
               </div>
-              <div className="flex-1 text-center">
-                <p className="hover:bg-[#2c2b2b65] cursor-pointer text-gray-400">
-                  Articles
-                </p>
+              <div
+                onClick={() => setSection("Articles")}
+                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
+              >
+                <p className="text-gray-400">Articles</p>
+                {section === "Articles" && (
+                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
+                )}
               </div>
-              <div className="flex-1 text-center">
-                <p className="hover:bg-[#2c2b2b65] cursor-pointer text-gray-400">
-                  Media
-                </p>
+              <div
+                onClick={() => setSection("Media")}
+                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
+              >
+                <p className="text-gray-400">Media</p>
+                {section === "Media" && (
+                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
+                )}
               </div>
-              <div className="flex-1 text-center">
-                <p className="hover:bg-[#2c2b2b65] cursor-pointer text-gray-400">
-                  Likes
-                </p>
+              <div
+                onClick={() => setSection("Likes")}
+                className="hover:bg-[#2c2b2b65] h-[100%] cursor-pointer flex flex-col flex-1 text-center content-center items-center"
+              >
+                <p className="text-gray-400">Likes</p>
+                {section === "Likes" && (
+                  <div className=" h-1 w-[15%] mt-1 rounded-3xl mb-1 bg-[#1d9bf0]"></div>
+                )}
               </div>
             </div>
           </div>
