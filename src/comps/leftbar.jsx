@@ -9,7 +9,7 @@ import { LuSquareSlash } from "react-icons/lu";
 import { GoHomeFill } from "react-icons/go";
 import { TbBrandX } from "react-icons/tb";
 import Element from "./element.jsx";
-export default function LeftBar({ setPage }) {
+export default function LeftBar({ setReposts, setPage }) {
   return (
     <div className=" h-screen w-[22%] fixed p-2">
       <div className="ml-[50%] flex flex-col gap-2">

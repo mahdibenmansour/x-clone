@@ -5,8 +5,17 @@ import LeftBar from "../comps/leftbar.jsx";
 import RightBar from "../comps/rightbar";
 import { useState } from "react";
 import Section from "../comps/profileComps/section.jsx";
+import { FaRetweet } from "react-icons/fa6";
+import Post from "../comps/Post.jsx";
 export default function Profile({ setPage }) {
   const [section, setSection] = useState("Media");
+  let repost = {
+    profilePic:
+      "https://ton.twitter.com/onboarding/subscriptions/free_grok_prompt_blackhole2_min.png",
+    fullname: "Twitter",
+    username: "mahdi",
+    time: "2h",
+  };
   return (
     <div className=" text-white flex content-center ">
       <LeftBar setPage={setPage} />
@@ -99,6 +108,22 @@ export default function Profile({ setPage }) {
               <Section name="Media" setSection={setSection} section={section} />
               <Section name="Likes" setSection={setSection} section={section} />
             </div>
+            {/* posts*/}
+            <div id="posts" className="flex flex-col h-[100] pt-2">
+              <div id="post" className="flex flex-col h-[100]">
+                <div className="pl-6 flex gap-3 items-center content-center font-semibold">
+                  <FaRetweet color="gray" size={20} />
+                  <p className=" text-gray-500">You reposted</p>
+                </div>
+                <Post data={repost}>
+                  <img
+                    src="https://ton.twitter.com/onboarding/subscriptions/free_grok_prompt_blackhole2_min.png"
+                    alt=""
+                  />
+                </Post>
+              </div>
+            </div>
+            {/* posts*/}
           </div>
           {/*  */}
         </div>

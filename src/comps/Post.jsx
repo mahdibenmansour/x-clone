@@ -12,7 +12,7 @@ export default function Post({ data, children }) {
   const [isReposted, setIsReposted] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   return (
-    <div id="post" className="flex pt-3 border-t border-gray-500 pr-3">
+    <div id="post" className="flex pt-3  pr-3">
       <div className="w-[10%]  ">
         <img
           src={data.profilePic}
