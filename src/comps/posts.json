@@ -10,8 +10,8 @@
         "comments": 30,
         "verified": true,
         "description": "this is a test",
-        "type":"all"
-
+        "type":"all",
+        "reposted":true
         
     },{
         "id":2,
@@ -28,7 +28,8 @@
         "image": {
             "link":"https://preview.redd.it/fluxing-random-superheros-with-schnell-higher-resolution-v0-8brghkytuoid1.png?width=640&crop=smart&auto=webp&s=93f0d767a27bb1722c9e15227a8ec21a70593740"
             ,"alt":"image"
-        }
+        },
+        "reposted":false
         
     },{
         "id":3,
@@ -46,6 +47,6 @@
         "image": {
             "link":"https://preview.redd.it/fluxing-random-superheros-with-schnell-higher-resolution-v0-8brghkytuoid1.png?width=640&crop=smart&auto=webp&s=93f0d767a27bb1722c9e15227a8ec21a70593740"
             ,"alt":"image"
-        }
+        },"reposted":false
         }
 ]

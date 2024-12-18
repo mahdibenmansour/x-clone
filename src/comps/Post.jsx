@@ -9,7 +9,7 @@ import Icon from "./icon";
 import PostContent from "./postcontent.jsx";
 export default function Post({ data, children }) {
   const [isLiked, setIsliked] = useState(false);
-  const [isReposted, setIsReposted] = useState(false);
+  const [isReposted, setIsReposted] = useState(data.reposted);
   const [isSaved, setIsSaved] = useState(false);
   return (
     <div id="post" className="flex pt-3  pr-3">
@@ -47,7 +47,13 @@ export default function Post({ data, children }) {
             color="black"
           >
             <FaRetweet
-              onClick={(e) => setIsReposted((prev) => !prev)}
+              onClick={(e) => {
+                setIsReposted((prev) => {
+                  !prev;
+                  data.reposted = !prev;
+                  return !prev;
+                });
+              }}
               color={isReposted ? "green" : ""}
             />
           </Icon>

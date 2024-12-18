@@ -7,20 +7,13 @@ import { useState } from "react";
 import Section from "../comps/profileComps/section.jsx";
 import { FaRetweet } from "react-icons/fa6";
 import Post from "../comps/Post.jsx";
-export default function Profile({ setPage }) {
-  const [section, setSection] = useState("Media");
-  let repost = {
-    profilePic:
-      "https://ton.twitter.com/onboarding/subscriptions/free_grok_prompt_blackhole2_min.png",
-    fullname: "Twitter",
-    username: "mahdi",
-    time: "2h",
-  };
+export default function Profile({ setPage, posts }) {
+  const [section, setSection] = useState("Posts");
   return (
     <div className=" text-white flex content-center ">
       <LeftBar setPage={setPage} />
       <main className="flex flex-1">
-        <div className=" flex flex-col h-screen ml-[25%]  w-[38%] border border-1 border-b-0 border-t-0 border-gray-600">
+        <div className=" flex flex-col h-[100%] min-h-screen ml-[25%]  w-[38%] border border-1 border-b-0 border-t-0 border-gray-600">
           {/*  */}
           <div className="flex flex-col ">
             <div className="flex h-12">
@@ -109,20 +102,33 @@ export default function Profile({ setPage }) {
               <Section name="Likes" setSection={setSection} section={section} />
             </div>
             {/* posts*/}
-            <div id="posts" className="flex flex-col h-[100] pt-2">
-              <div id="post" className="flex flex-col h-[100]">
-                <div className="pl-6 flex gap-3 items-center content-center font-semibold">
-                  <FaRetweet color="gray" size={20} />
-                  <p className=" text-gray-500">You reposted</p>
-                </div>
-                <Post data={repost}>
-                  <img
-                    src="https://ton.twitter.com/onboarding/subscriptions/free_grok_prompt_blackhole2_min.png"
-                    alt=""
-                  />
-                </Post>
+            {section === "Posts" && (
+              <div id="posts" className="flex flex-col h-[100] pt-2">
+                {posts
+                  .filter((post) => post.reposted === true)
+                  .map((post) => (
+                    <div
+                      id="post"
+                      className="border-b border-gray-500 flex flex-col h-[100]"
+                    >
+                      <div className="pl-6 flex gap-3 items-center content-center font-semibold">
+                        <FaRetweet color="gray" size={20} />
+                        <p className=" text-gray-500">You reposted</p>
+                      </div>
+                      <Post key={post.id} data={post}>
+                        {post.description && <p>{post.description}</p>}
+                        {post.image && (
+                          <img
+                            className="rounded-xl"
+                            src={post.image.link}
+                            alt={post.image.alt}
+                          />
+                        )}
+                      </Post>
+                    </div>
+                  ))}
               </div>
-            </div>
+            )}
             {/* posts*/}
           </div>
           {/*  */}

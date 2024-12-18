@@ -5,7 +5,7 @@ import { MdOutlineGifBox } from "react-icons/md";
 import { CiImageOn } from "react-icons/ci";
 import { useRef, useState } from "react";
 
-export default function NewPost({ setReposts, setPosts, setPage }) {
+export default function NewPost({ setPosts, setPage }) {
   const [newPost, setNewPost] = useState({});
   const fileRef = useRef();
 
@@ -90,6 +90,7 @@ export default function NewPost({ setReposts, setPosts, setPage }) {
                   verified: true,
                   profilePic:
                     "https://media.tenor.com/2fDPAEGo1vAAAAAM/alfred-marko.gif",
+                  reposted: false,
                 },
               ])
             }
