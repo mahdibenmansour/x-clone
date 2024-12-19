@@ -7,6 +7,7 @@ function App() {
   const [posts, setPosts] = useState(data);
   return (
     <>
+      {/* i need ti pass set posts   */}
       {page === "Home" ? (
         <Home setPage={setPage} setPosts={setPosts} posts={posts} />
       ) : (
