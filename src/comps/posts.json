@@ -13,7 +13,21 @@
         "type":"all",
         "reposted":true
         
-    },{
+    }, {"id":4,
+    "fullname": "Dear Self.",
+    "username": "@Dearme2_",
+    "time": "23h",
+    "profilePic": "https://media.tenor.com/2fDPAEGo1vAAAAAM/alfred-marko.gif",
+    "likes": 500,
+    "retweets": 50,
+    "views": "1k",
+    "comments": 30,
+    "verified": true,
+    "description": "this is a test",
+    "type":"all",
+    "reposted":true
+    
+},{
         "id":2,
         "fullname": "Dear Self.",
         "username": "@Dearme2_",
