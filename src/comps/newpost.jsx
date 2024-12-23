@@ -32,6 +32,29 @@ export default function NewPost({ setPosts, setPage }) {
             setNewPost((prev) => ({ ...prev, description: e.target.value }));
           }}
         ></input>
+        {newPost.image?.link && (
+          <div className="relative">
+            <img
+              src={newPost.image.link}
+              alt="img"
+              className="rounded-xl mt-4  "
+            />
+            <div
+              className="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full cursor-pointer"
+              onClick={() =>
+                setNewPost((prev) => ({
+                  ...prev,
+                  image: {
+                    ...prev.image,
+                    link: null,
+                  },
+                }))
+              }
+            >
+              x
+            </div>
+          </div>
+        )}
         <div className="flex mt-14">
           <div
             id="icons"
