@@ -116,7 +116,7 @@ export default function Profile({ setPage, posts }) {
                         <p className=" text-gray-500">You reposted</p>
                       </div>
                       <Post key={post.id} data={post}>
-                        {post.description && <p>{post.description}</p>}
+                        {post.body && <p>{post.body}</p>}
                         {post.image && (
                           <img
                             className="rounded-xl"

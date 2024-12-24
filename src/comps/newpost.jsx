@@ -8,9 +8,6 @@ import { useRef, useState } from "react";
 export default function NewPost({ setPosts, setPage }) {
   const [newPost, setNewPost] = useState({});
   const fileRef = useRef();
-
-  console.log(newPost.image?.link);
-
   return (
     <div id="post" className="flex pt-3 border-t border-gray-500 pr-3 pb-2">
       <div className="w-[7.5%]  ">

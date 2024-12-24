@@ -5,11 +5,11 @@ export default function Feed({ setPage, posts, setPosts }) {
     <div id="feed" className="flex flex-col  ">
       <NewPost posts={posts} setPage={setPage} setPosts={setPosts} />
       {posts
-        .filter((post) => post.type === "all" || post.type == "forYou")
+        .filter((post) => post.id % 2 === 0)
         .map((post) => (
           <div className="border-t border-gray-500">
             <Post key={post.id} data={post}>
-              {post.description && <p>{post.description}</p>}
+              {post.body && <p>{post.body}</p>}
               {post.image && (
                 <img
                   className="rounded-xl"

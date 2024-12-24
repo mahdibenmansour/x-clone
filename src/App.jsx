@@ -18,15 +18,13 @@ function App() {
       .then((res) => res.json())
       .then((data) => setUsers(data.users));
   }, []);
-  console.log(postsApi[0]);
-  console.log(users[0]);
   return (
     <>
       {/* i need to pass set posts   */}
       {page === "Home" ? (
-        <Home setPage={setPage} setPosts={setPosts} posts={posts} />
+        <Home setPage={setPage} setPosts={setPostsApi} posts={postsApi} />
       ) : (
-        <Profile setPage={setPage} posts={posts} />
+        <Profile setPage={setPage} posts={postsApi} />
       )}
     </>
   );
